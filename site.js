@@ -21,8 +21,9 @@
   let unmount = null;
   function media(src, path) {
     if (isVideo(path || src)) { const v = document.createElement('video'); v.src = src; v.controls = true; v.playsInline = true; v.preload = 'metadata'; return v; }
-    const i = document.createElement('img'); i.alt = '';
-    i.onload = () => { if (i.naturalHeight > i.naturalWidth * 2) i.classList.add('is-long'); };
+    const i = document.createElement('img'); i.alt = ''; i.className = 'is-loading';
+    i.onload = () => { i.classList.remove('is-loading'); if (i.naturalHeight > i.naturalWidth * 2) i.classList.add('is-long'); };
+    i.onerror = () => i.classList.remove('is-loading');
     i.src = src; return i;
   }
   const vopen = dlg.querySelector('.viewer__open');

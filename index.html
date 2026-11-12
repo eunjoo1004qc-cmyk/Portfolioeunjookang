@@ -100,6 +100,7 @@
   .viewer__body > img, .viewer__body > video { display: block; width: 100%; max-width: 860px; height: auto; border-radius: var(--r-sm); background: #fff; }
   .viewer__body > img.is-long { max-width: 480px; }
   .viewer__msg:empty { display: none; }
+  .viewer__body > img.is-loading { min-height: 60vh; max-width: 480px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='24'%3E%3Ctext x='70' y='16' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23888'%3E%EB%B6%88%EB%9F%AC%EC%98%A4%EB%8A%94 %EC%A4%91...%3C/text%3E%3C/svg%3E") center/140px 24px no-repeat; }
   /* admin page (#admin): replaces the site while open */
   html.is-admin header.nav, html.is-admin main, html.is-admin footer.closing { display: none !important; }
   .admin { max-width: 1120px; margin: 0 auto; padding: 48px max(16px, env(safe-area-inset-left, 0px)) 96px max(16px, env(safe-area-inset-right, 0px)); font-family: var(--font-text); color: var(--ink); }
