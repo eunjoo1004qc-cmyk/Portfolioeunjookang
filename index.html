@@ -1,0 +1,440 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Eunjoo Kang Portfolio</title>
+<script>(function(h){h.lang="ko";h.dataset.type="service";h.dataset.radius="soft";h.dataset.buttons="arrow";h.setAttribute("data-motion","")})(document.documentElement)</script>
+<meta name="description" content="강은주(Eunjoo Kang) 포트폴리오: 상세페이지, 피그마 앱 화면, 포스터, 영상.">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif&family=Instrument+Sans:wdth,wght@75..100,400..600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<link rel="stylesheet" href="apps.css">
+<style>
+:root {
+  --p-bg: #ffffff; --p-surface: #f2f2f2; --p-ink: #0a0a0a; --p-muted: #6b6b6b;
+  --p-accent: #d92b21; --p-accent-ink: #ffffff; --p-action: #d92b21; --p-action-ink: #ffffff;
+  --p-inv-bg: #000000; --p-inv-surface: #010101; --p-inv-ink: #ffffff; --p-inv-muted: #868686;
+  --p-inv-accent: #d92b21; --p-inv-accent-ink: #ffffff; --p-inv-action: #d92b21; --p-inv-action-ink: #ffffff;
+  --font-display: "Instrument Serif", "Noto Serif KR", Georgia, serif;
+  --font-text: "Instrument Sans", "Noto Sans KR", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.012em;
+  --display-tracking-xl: -0.016em;
+  --ly-scale: 1.12;
+}
+</style>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<!-- page CSS: only what sits inside a visual -->
+<style>
+  #work .tile__media { --tile-ratio: 2 / 1; }
+  #apps .frame { --ratio: 66.6667%; }
+  #films .frame { --ratio: 56.25%; background: var(--ink); }
+  #films .frame > .frame__img { object-fit: cover; }
+  #process .panel { --p-h: 336px; }
+  #posters .tile__media { --tile-ratio: 4 / 5; }
+  #posters .tile--poster .tile__media > img { object-fit: contain; padding: var(--s-5); }
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    #process .grid > .card { grid-column: span 4; }
+  }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    #process .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    #process .grid > .card { grid-column: auto; }
+    #process .panel { --p-h: 380px; }
+    #work .grid, #posters .grid, #apps .grid, #films .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #work .grid > .tile, #posters .grid > .tile, #apps .grid > .frame, #films .grid > .frame { grid-column: auto; }
+    #posters .tile__media { --tile-ratio: 3 / 4; }
+    #posters .tile--street { display: none; }
+  }
+  @media (max-width: 639px) {
+    #process .panel { --p-h: 280px; }
+    #services .frame--fill { height: 140px; min-height: 140px; }
+    #work .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #work .grid > .tile { grid-column: auto; }
+    #posters .grid { grid-template-columns: minmax(0, 1fr); }
+    #posters .grid > .tile { grid-column: auto; }
+    #posters .tile--street .tile__media { --tile-ratio: 16 / 9; }
+    #work .tile__media { --tile-ratio: 16 / 10; }
+  }
+  /* hero: the typing loop over the photograph (four outline lines fill white one by one, then the name types) */
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .hero--film .hero__media { position: relative; }
+  .hero--film .hero__media::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit;
+    background: linear-gradient(to bottom, rgba(14, 16, 22, .74), rgba(14, 16, 22, .62) 50%, rgba(14, 16, 22, .86)); }
+  .type-hero { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: var(--s-5); padding: var(--s-6); text-align: center; color: #fff; }
+  .type-hero .hero__lead { color: rgba(255, 255, 255, .86); max-width: 46ch; margin: 0; }
+  .type-hero .btn-row { justify-content: center; }
+  .type-hero .btn--secondary { color: #fff; }
+  .type-hero .ly-play { position: absolute; right: var(--s-6); bottom: var(--s-6); }
+  .hero-stage { display: grid; place-items: center; min-height: calc(4 * clamp(30px, min(9vw, 9.5vh), 120px) * 1.04); }
+  .hero-stage > * { grid-area: 1 / 1; }
+  .hero-lines { display: flex; flex-direction: column; align-items: center; transition: opacity .5s ease, transform .5s ease;
+    font: 400 clamp(30px, min(9vw, 9.5vh), 120px)/1.04 "Anton", "Arial Narrow", Impact, sans-serif; letter-spacing: .01em; }
+  .hero-lines.is-gone { opacity: 0; transform: scale(.96); pointer-events: none; }
+  .line { color: transparent; -webkit-text-stroke: 2px rgba(255, 255, 255, .9); text-decoration: none; transition: color .35s ease;
+    opacity: 0; transform: translateY(40%); animation: rise .8s cubic-bezier(.2, .7, .2, 1) forwards; }
+  .line:nth-child(2) { animation-delay: .15s; } .line:nth-child(3) { animation-delay: .3s; } .line:nth-child(4) { animation-delay: .45s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .line.is-fill, .line:hover, .line:focus-visible { color: #fff; }
+  .hero-name { visibility: hidden; margin: 0; white-space: pre-line; color: #fff;
+    font: 400 clamp(32px, min(5.4vw, 7.8vh), 76px)/1.1 "Anton", "Arial Narrow", Impact, sans-serif; letter-spacing: .03em; }
+  .hero-name.is-on { visibility: visible; }
+  .caret { display: inline-block; width: .06em; height: .8em; margin-left: .08em; vertical-align: -.02em; background: #fff; animation: blink .9s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (max-width: 639px) { .line { -webkit-text-stroke-width: 1.5px; } .type-hero .btn-row { width: 100%; } .type-hero .ly-play { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .line, .caret { animation: none; opacity: 1; transform: none; } }
+  :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) p, :lang(ko) li { word-break: keep-all; }
+  /* work popup: the long detail page, then its mockups, scrolled inside a window over the page */
+  dialog.viewer { width: min(920px, 100vw - 32px); max-height: calc(100svh - 48px); padding: 0; border: 0; border-radius: var(--r-lg);
+    background: var(--g-main, #fff); color: var(--ink); overflow: hidden; display: none; flex-direction: column; }
+  dialog.viewer[open] { display: flex; }
+  dialog.viewer::backdrop { background: rgba(10, 10, 10, .62); }
+  .viewer__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); padding: var(--s-4) var(--s-5); border-bottom: 1px solid rgba(10, 10, 10, .12); }
+  .viewer__title { font: var(--display-weight) var(--t-h3, 28px)/1.2 var(--font-display); margin: 0; }
+  .viewer__body { overflow-y: auto; display: flex; flex-direction: column; align-items: center; gap: var(--s-5); padding: var(--s-5); background: var(--surface); }
+  .viewer__body > img, .viewer__body > video { display: block; width: 100%; max-width: 860px; height: auto; border-radius: var(--r-sm); background: #fff; }
+  .viewer__body > img.is-long { max-width: 480px; }
+  .viewer__msg:empty { display: none; }
+  /* admin page (#admin): replaces the site while open */
+  html.is-admin header.nav, html.is-admin main, html.is-admin footer.closing { display: none !important; }
+  .admin { max-width: 1120px; margin: 0 auto; padding: 48px max(16px, env(safe-area-inset-left, 0px)) 96px max(16px, env(safe-area-inset-right, 0px)); font-family: var(--font-text); color: var(--ink); }
+  .admin__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .admin h1 { font: var(--display-weight) 40px/1.1 var(--font-display); margin: 0; }
+  .admin h2 { font: var(--display-weight) 28px/1.2 var(--font-display); margin: 48px 0 16px; }
+  .admin h3 { font: 500 18px/1.3 var(--font-text); margin: 0; }
+  .admin__note { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 12px 0 0; max-width: 70ch; }
+  .admin__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .admin__grid--small { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); margin-top: 12px; }
+  .admin__card { display: grid; gap: 10px; align-content: start; padding: 12px; border: 1px solid rgba(10, 10, 10, .12); border-radius: var(--r-md); background: #fff; }
+  .admin__thumb { aspect-ratio: 4 / 3; border-radius: var(--r-sm); background: var(--surface); overflow: hidden; display: grid; place-items: center; }
+  .admin__thumb > img, .admin__thumb > video { width: 100%; height: 100%; object-fit: cover; }
+  .admin__empty { color: var(--muted); font-size: 14px; }
+  .admin__name { margin: 0; font-size: 15px; font-weight: 500; }
+  .admin__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: space-between; }
+  .admin__card .admin__row { justify-content: flex-start; }
+  .admin__work { padding: 16px 0; border-bottom: 1px solid rgba(10, 10, 10, .12); }
+  .admin__btn { font: 500 14px/1 var(--font-text); height: 36px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid rgba(10, 10, 10, .2); background: #fff; color: var(--ink); cursor: pointer; text-decoration: none; }
+  .admin__btn--primary { background: var(--action); color: #fff; border-color: transparent; }
+  .viewer__close { font: 500 14px/1 var(--font-text); height: 36px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(10, 10, 10, .2); background: #fff; color: var(--ink); cursor: pointer; }
+  .showreel-video { position: absolute; inset: 0; z-index: 5; width: 100%; height: 100%; background: #000; border-radius: inherit; }
+  .save-toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 50; margin: 0;
+    padding: 12px 20px; border-radius: 999px; background: var(--ink); color: #fff; font: 500 14px/1.4 var(--font-text); max-width: calc(100vw - 32px); text-align: center; }
+  [data-gallery] { cursor: zoom-in; }
+  /* owner-only login chip, admin bar and login page (nobody else ever sees these) */
+  .nav__login { font: 500 14px/36px var(--font-text); height: 36px; padding: 0 14px; margin-right: 10px; border-radius: 999px; border: 1px solid rgba(10,10,10,.2); color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .nav__login[hidden], .owner-bar[hidden] { display: none !important; }
+  .owner-bar { position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 40; display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 18px; border-radius: 999px; background: var(--ink); color: #fff; font: 500 14px/1 var(--font-text); box-shadow: 0 8px 24px rgba(0,0,0,.2); white-space: nowrap; }
+  .owner-bar a { color: #111; background: #fff; padding: 9px 14px; border-radius: 999px; text-decoration: none; }
+  .login-box { max-width: 440px; margin: 12vh auto 0; padding: 36px 32px; border: 1px solid rgba(10,10,10,.12); border-radius: var(--r-lg); background: #fff; text-align: center; }
+  .login-box h1 { font: var(--display-weight) 32px/1.2 var(--font-display); margin: 0 0 12px; }
+  .login-box p { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0 0 20px; }
+  .login-box .admin__row { justify-content: center; }
+  .admin__text { display: grid; gap: 8px; padding: 14px; border: 1px solid rgba(10,10,10,.12); border-radius: var(--r-md); background: #fff; }
+  .admin__text textarea { font: 400 15px/1.6 var(--font-text); width: 100%; min-height: 96px; padding: 10px 12px; border: 1px solid rgba(10,10,10,.2); border-radius: var(--r-sm); resize: vertical; box-sizing: border-box; }
+  .admin__texts { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  /* films: the AI webtoon film card opens its whole portfolio page in the popup */
+  .films-grid { align-content: start; row-gap: var(--s-5); }
+  .film-feature { position: relative; display: block; aspect-ratio: 21 / 9; border-radius: var(--r-lg); overflow: hidden; color: #fff; text-decoration: none; cursor: pointer; background: #1c1714; }
+  .film-feature > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .film-feature:hover > img { transform: scale(1.03); }
+  .film-feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,12,10,.88) 0%, rgba(14,12,10,.55) 45%, rgba(14,12,10,.05) 80%); }
+  .film-feature__in { position: absolute; z-index: 1; left: clamp(20px, 4vw, 56px); top: 50%; transform: translateY(-50%); width: min(520px, 80%); display: flex; flex-direction: column; gap: 14px; }
+  .film-feature__tag { font: 500 13px/1.4 var(--font-text); color: #e7c08a; letter-spacing: .04em; }
+  .film-feature__title { font: 900 clamp(40px, 6vw, 84px)/1 "Noto Serif KR", serif; letter-spacing: -.04em; }
+  .film-feature__log { font: 400 16px/1.7 var(--font-text); color: #efe4d2; }
+  .film-feature__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .film-feature__chips span { font: 500 12px/1 var(--font-text); padding: 7px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.35); }
+  .film-feature__cta { align-self: flex-start; margin-top: 6px; font: 600 15px/1 var(--font-text); background: #fff; color: #111; padding: 13px 20px; border-radius: 999px; }
+  .films-sub { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+  dialog.viewer.is-page { width: min(1240px, 100vw - 32px); height: calc(100svh - 48px); }
+  .viewer__body.is-page { padding: 0; gap: 0; display: block; overflow: hidden; flex: 1 1 auto; min-height: 0; }
+  .viewer__open, .viewer__close { white-space: nowrap; flex: none; }
+  dialog.viewer.is-page .viewer__title { font-size: 24px; }
+  .viewer__frame { display: block; width: 100%; height: 100%; border: 0; background: #f4ede1; }
+  .viewer__open { font: 500 14px/36px var(--font-text); height: 36px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(10,10,10,.2); color: var(--ink); text-decoration: none; margin-left: auto; margin-right: 8px; }
+  .viewer__open[hidden] { display: none; }
+  @media (max-width: 639px) {
+    .film-feature { aspect-ratio: 4 / 5; }
+    .film-feature::after { background: linear-gradient(0deg, rgba(14,12,10,.92) 0%, rgba(14,12,10,.6) 55%, rgba(14,12,10,.1) 100%); }
+    .film-feature__in { top: auto; bottom: 20px; transform: none; width: auto; right: 20px; }
+    .film-feature__log { font-size: 14px; }
+    dialog.viewer.is-page { width: 100vw; max-width: 100vw; height: 100svh; max-height: 100svh; border-radius: 0; }
+    dialog.viewer.is-page .viewer__title { font-size: 18px; }
+    dialog.viewer.is-page .viewer__open { display: none; }
+    dialog.viewer.is-page .viewer__bar { padding: 12px 16px; }
+  }
+  .footer__note { color: var(--muted); font-size: var(--t-small); max-width: 62ch; }
+  /* any window size: a section keeps at least its screens and grows past them rather than overlap the next */
+  main > :is(section, .section):not(.hero), footer.closing {
+    height: auto; min-height: calc(var(--h, 1) * 100vh); min-height: calc(var(--h, 1) * 100svh);
+    display: flex; flex-direction: column;
+  }
+  main > :is(section, .section):not(.hero) > .wrap, footer.closing > .wrap { flex: 1 0 auto; height: auto; min-height: 0; }
+  main > :is(section, .section):not(.hero) > .wrap > .fill { flex: 1 0 auto; }
+  main > .hero { height: max(100svh, 660px); }
+  @media (max-width: 639px) {
+    main > :is(section, .section):not(.hero), footer.closing {
+      height: auto; min-height: calc(var(--hm, var(--h, 1)) * 100vh); min-height: calc(var(--hm, var(--h, 1)) * 100svh);
+    }
+    main > .hero { height: max(100svh, 600px); }
+  }
+</style>
+<!-- type: service (site-kind other: a design portfolio)
+     deal: hero film, nav nav-centre, close close-photo, footer footer-columns (footer-visit dealt again: no door), rhythm space, buttons arrow, mark dots
+     palette white-signal-red, type instrument-serif, radius soft
+     screens: hero 1 · services 1 · work 1 · apps 1 · process 1 · films 1 · posters 1 · closing 1 -->
+
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="dots" aria-hidden="true"></span>Eunjoo Kang</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="#services">Services</a></div>
+      <div class="nav__item">
+        <a class="nav__link" href="#work">Work <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <div class="menu-col span-3">
+              <p class="t-label">Detail pages</p>
+              <a href="#work">ODÉA<span>울 로브 코트 · 패션</span></a>
+              <a href="#work">MAISON MOA<span>수제 마카롱 · 디저트</span></a>
+              <a href="#work">AQUAVÉE<span>수분크림 · 화장품</span></a>
+            </div>
+            <div class="menu-col span-3">
+              <p class="t-label">Design</p>
+              <a href="#apps">App screens<span>피그마로 만든 앱 2개</span></a>
+              <a href="#posters">Posters<span>인쇄용 포스터 2장</span></a>
+              <a href="#films">Video<span>AI 웹툰영화</span></a>
+            </div>
+            <a class="menu-card span-3 start-10" href="#work">
+              <div class="panel"><img class="frame__img" src="images/works/somsi-thumb.jpg" alt="SOMSI wool knit detail page" data-source="client" data-subject="detail page"></div>
+              <span class="t-card">솜씨 울 니트</span>
+              <span class="t-small muted">가장 최근 상세페이지</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="#apps">Apps</a></div>
+      <div class="nav__item">
+        <a class="nav__link" href="#films">Video <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <div class="menu-col span-3">
+              <p class="t-label">AI 웹툰영화</p>
+              <a href="#films" data-open="last-guest">마지막 손님<span>시퀀스 · 캐릭터 · 배경 · 15컷 콘티</span></a>
+            </div>
+            <a class="menu-card span-3 start-10" href="#films" data-open="last-guest">
+              <div class="panel"><img class="frame__img" src="films/last-guest/img/c12.jpg" alt="마지막 손님 한 장면"></div>
+              <span class="t-card">마지막 손님</span>
+              <span class="t-small muted">가장 최근 Video 작업</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="#posters">Posters</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__login" href="#login" hidden>관리자</a>
+      <a class="btn btn--primary" href="mailto:hello@eunjookang.example">Email me</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO (film). CLIENT FILE showreel: put your film in videos/showreel.mp4 and write that path in data-film below;
+       until then the play button stays hidden. -->
+  <section class="hero hero--film" aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text hero__in">
+      <div class="hero__media hero__fill">
+        <img data-slot="hero-photo" src="images/hero-poster.jpg" alt="Two posters by Eunjoo Kang on a stone wall in a city street at dusk" style="--ly-pos: 50% 50%; --ly-pos-phone: 72% 50%" fetchpriority="high" data-source="client" data-subject="poster mockup">
+        <div class="type-hero">
+          <h1 id="hero-h" class="sr-only">Eunjoo Kang, detail page and app designer</h1>
+          <!-- the typing loop: data-name is the line typed (a / starts a new line); data-step, data-type and data-hold are times in ms -->
+          <div class="hero-stage" data-name="EUNJOO KANG / PORTFOLIO" data-step="900" data-type="90" data-hold="2500">
+            <nav class="hero-lines" aria-label="Work">
+              <a class="line" href="#films">VIDEO</a>
+              <a class="line" href="#posters">DESIGN</a>
+              <a class="line" href="#work">DETAIL PAGE</a>
+              <a class="line" href="#apps">FIGMA</a>
+            </nav>
+            <p class="hero-name" aria-hidden="true"><span id="typed"></span><span class="caret"></span></p>
+          </div>
+          <p class="hero__lead" data-text="hero-lead" data-text-name="첫 화면 소개 글">상세페이지, 피그마 앱 화면, 포스터, 영상을 휴대폰 화면 기준으로 만듭니다. 2026년 상세페이지 6개와 앱 2개를 만들었어요.</p>
+          <div class="btn-row"><a class="btn btn--primary" href="mailto:hello@eunjookang.example">Email me<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#work">See the work</a></div>
+          <button class="ly-play" type="button" data-film="" data-slot-video="showreel">
+            <span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span>
+            <span class="ly-play__label">Play the showreel<small>Video work, 2026</small></span>
+          </button>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- SERVICES (services-list) -->
+  <section class="section" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="grid grid--top fill">
+        <div class="span-6 stack-6">
+          <div class="section-head"><h2 id="services-h" data-text="services-title" data-text-name="하는 일 제목">온라인 쇼핑몰을 위한 디자인</h2><p data-text="services-desc" data-text-name="하는 일 설명">모든 작업은 상품과 그 상품을 사는 사람을 먼저 보는 것에서 시작해요.</p></div>
+          <ul class="rows">
+            <li><span class="rows__name">상세페이지</span><p>카피부터 마지막 사진까지 한 페이지를 통째로 만들어요.</p><span class="rows__value">6개 브랜드</span></li>
+            <li><span class="rows__name">앱 화면</span><p>쇼핑·주문 흐름을 피그마로, 개발자에게 바로 넘길 수 있게.</p><span class="rows__value">앱 2개</span></li>
+            <li><span class="rows__name">포스터</span><p>글씨와 사진을 직접 고른 인쇄용 포스터.</p><span class="rows__value">포스터 2장</span></li>
+            <li><span class="rows__name">영상</span><p>프리미어로 편집하고 효과음과 음악까지 넣어요.</p><span class="rows__value">프리미어</span></li>
+          </ul>
+        </div>
+        <div class="frame frame--photo frame--fill span-6 start-7">
+          <img data-slot="services-photo" class="frame__img" src="images/works/elune-2-phone-web.jpg" alt="ELUNE ampoule detail page shown on three phones" data-source="client" data-subject="detail page mockup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK (a grid of six project pictures, two screens) -->
+  <section class="section" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="work-h" data-text="work-title" data-text-name="상세페이지 제목">브랜드 6곳의 상세페이지</h2><p data-text="work-desc" data-text-name="상세페이지 설명">패션, 디저트, 화장품, 주스까지 휴대폰 기준으로 만든 전체 페이지예요. 누르면 처음부터 끝까지 볼 수 있어요.</p></div>
+      <div class="grid fill">
+        <a class="tile span-4" href="images/works/odea-full.jpg" data-gallery="images/works/odea-full.jpg|images/works/odea-mockup.jpg|images/works/odea-spread.jpg" data-title="ODÉA 울 로브 코트" data-key="work-odea">
+          <div class="tile__media"><img data-slot="work-odea" src="images/works/odea-mockup-wide.jpg" alt="ODÉA wool robe coat detail page on three phones" loading="lazy" data-source="client" data-subject="detail page"></div>
+          <div class="tile__head"><h3>ODÉA 울 로브 코트</h3><span class="tile__price muted">패션</span></div>
+        </a>
+        <a class="tile span-4" href="images/works/moa-full.jpg" data-gallery="images/works/moa-full.jpg|images/works/moa-mockup.jpg|images/works/moa-spread.jpg" data-title="MAISON MOA 마카롱" data-key="work-moa">
+          <div class="tile__media"><img data-slot="work-moa" src="images/works/moa-mockup-wide.jpg" alt="MAISON MOA macarons detail page on three phones" loading="lazy" data-source="client" data-subject="detail page"></div>
+          <div class="tile__head"><h3>MAISON MOA 마카롱</h3><span class="tile__price muted">디저트</span></div>
+        </a>
+        <a class="tile span-4" href="images/works/elune-1-spread.jpg" data-gallery="images/works/elune-1-phone.jpg|images/works/elune-1-spread.jpg|images/works/elune-2-phone.jpg|images/works/elune-2-spread.jpg" data-title="ELUNE 비타 앰플" data-key="work-elune">
+          <div class="tile__media"><img data-slot="work-elune" src="images/works/elune-1-phone-wide.jpg" alt="ELUNE vitamin ampoule detail page on three phones" loading="lazy" data-source="client" data-subject="detail page"></div>
+          <div class="tile__head"><h3>ELUNE 비타 앰플</h3><span class="tile__price muted">화장품</span></div>
+        </a>
+        <a class="tile span-4" href="images/works/aquavee-full.jpg" data-gallery="images/works/aquavee-full.jpg|images/works/aquavee-phone.jpg|images/works/aquavee-spread.jpg" data-title="AQUAVÉE 수분크림" data-key="work-aquavee">
+          <div class="tile__media"><img data-slot="work-aquavee" src="images/works/aquavee-phone-wide.jpg" alt="AQUAVÉE moisture cream detail page on three phones" loading="lazy" data-source="client" data-subject="detail page"></div>
+          <div class="tile__head"><h3>AQUAVÉE 수분크림</h3><span class="tile__price muted">화장품</span></div>
+        </a>
+        <a class="tile span-4" href="images/works/doldam-full.jpg" data-gallery="images/works/doldam-full.jpg|images/works/doldam-phone.jpg|images/works/doldam-spread.jpg" data-title="돌담 감귤 주스" data-key="work-doldam">
+          <div class="tile__media"><img data-slot="work-doldam" src="images/works/doldam-phone-wide.jpg" alt="DOLDAM tangerine juice detail page on three phones" loading="lazy" data-source="client" data-subject="detail page"></div>
+          <div class="tile__head"><h3>돌담 감귤 주스</h3><span class="tile__price muted">식품</span></div>
+        </a>
+        <a class="tile span-4" href="images/works/somsi-full.jpg" data-gallery="images/works/somsi-full.jpg|images/works/somsi-phone.jpg|images/works/somsi-spread.jpg" data-title="솜씨 울 니트" data-key="work-somsi">
+          <div class="tile__media"><img data-slot="work-somsi" src="images/works/somsi-phone-wide.jpg" alt="SOMSI wool knit detail page on three phones" loading="lazy" data-source="client" data-subject="detail page"></div>
+          <div class="tile__head"><h3>솜씨 울 니트</h3><span class="tile__price muted">패션</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS (photo-pair) -->
+  <section class="section" id="apps" aria-labelledby="apps-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="apps-h" data-text="apps-title" data-text-name="앱 제목">피그마로 만든 앱 2개</h2><p data-text="apps-desc" data-text-name="앱 설명">왼쪽은 모아샵 쇼핑 앱, 오른쪽은 오늘의 카페 주문 앱이에요. 누르면 휴대폰 화면에서 직접 담고 주문해 볼 수 있어요.</p></div>
+      <div class="grid fill">
+        <a class="frame frame--photo span-6" href="images/works/shop-board.jpg" data-gallery="images/works/shop-board.jpg" data-title="모아샵 쇼핑 앱" data-app="shop" data-key="app-shop" aria-label="Open the MOA shop app screens"><img data-slot="app-shop" class="frame__img" src="images/works/shop-board.jpg" alt="MOA shop app: home, product and cart screens" loading="lazy" data-source="client" data-subject="app screens"></a>
+        <a class="frame frame--photo span-6" href="images/works/cafe-board.jpg" data-gallery="images/works/cafe-board.jpg" data-title="오늘의 카페 주문 앱" data-app="cafe" data-key="app-cafe" aria-label="Open the cafe ordering app screens"><img data-slot="app-cafe" class="frame__img" src="images/works/cafe-board.jpg" alt="Cafe ordering app: menu, options and order complete screens" loading="lazy" data-source="client" data-subject="app screens"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS (steps) -->
+  <section class="section" id="process" style="--hm: 2" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="process-h" data-text="process-title" data-text-name="작업 순서 제목">상세페이지를 만드는 3단계</h2><p data-text="process-desc" data-text-name="작업 순서 설명">살 사람이 궁금한 것부터 휴대폰에서 읽히는 모습까지, 매번 같은 순서로 만들어요.</p></div>
+      <div class="grid">
+        <article class="card card--row span-4">
+          <span class="step-num">1</span>
+          <h3>상품·내용 이해</h3>
+          <p>누가 보는지, 사기 전에 무엇이 궁금한지 순서대로 적어요.</p>
+          <div class="panel"><img data-slot="step-1" class="frame__img" src="images/works/odea-spread-web.jpg" alt="ODÉA detail page laid out section by section" loading="lazy" data-source="client" data-subject="detail page"></div>
+        </article>
+        <article class="card card--row span-4">
+          <span class="step-num">2</span>
+          <h3>구성·카피·디자인</h3>
+          <p>한 화면에 한 메시지만, 문구를 먼저 쓰고 디자인해요.</p>
+          <div class="panel"><img data-slot="step-2" class="frame__img" src="images/works/doldam-spread-web.jpg" alt="DOLDAM juice page screens side by side" loading="lazy" data-source="client" data-subject="detail page"></div>
+        </article>
+        <article class="card card--row span-4">
+          <span class="step-num">3</span>
+          <h3>휴대폰 확인</h3>
+          <p>휴대폰에서 직접 넘겨 보며 잘 안 읽히는 곳을 고쳐요.</p>
+          <div class="panel"><img data-slot="step-3" class="frame__img" src="images/works/somsi-spread-web.jpg" alt="SOMSI knit page screens side by side" loading="lazy" data-source="client" data-subject="detail page"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILMS. CLIENT FILE films: put film-1.mp4 and film-2.mp4 in videos/, then add
+       <source src="videos/film-1.mp4" type="video/mp4"> and the controls attribute to each video. -->
+  <section class="section" id="films" aria-labelledby="films-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="films-h" data-text="films-title" data-text-name="Video 제목">Video</h2><p data-text="films-desc" data-text-name="영상 설명">스토리를 직접 기획하고 AI로 만든 웹툰영화예요. 카드를 누르면 기획부터 캐릭터, 배경, 콘티, 완성 영상까지 전부 볼 수 있어요.</p></div>
+      <div class="grid fill films-grid">
+        <a class="film-feature span-12" id="last-guest" href="films/last-guest/index.html" data-page="films/last-guest/index.html" data-title="마지막 손님 · AI 웹툰 단편영화" aria-label="마지막 손님 포트폴리오 열기">
+          <img data-slot="film-lg-cover" src="films/last-guest/img/hero.jpg" alt="마지막 손님: 카페 창가에 마주 앉은 노신사와 알바생" loading="lazy">
+          <span class="film-feature__in">
+            <span class="film-feature__tag" data-text="lg-tag" data-text-name="마지막 손님 카드 윗줄">AI 웹툰 단편영화 · 기획 · 각본 · 연출 · 편집</span>
+            <span class="film-feature__title" data-text="lg-title" data-text-name="마지막 손님 카드 제목">마지막 손님</span>
+            <span class="film-feature__log" data-text="lg-log" data-text-name="마지막 손님 카드 줄거리">문 닫기 직전의 카페, 매일 커피 두 잔을 시키는 노신사. 맞은편의 한 잔은 언제나 식은 채로 남는다.</span>
+            <span class="film-feature__chips"><span>예고편 · 본편</span><span>5시퀀스</span><span>캐릭터 시트 3</span><span>배경 시트 4</span><span>15컷 스토리보드</span></span>
+            <span class="film-feature__cta">포트폴리오 보기 →</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSTERS (split: text left, the two posters right) -->
+  <section class="section" id="posters" style="--hm: 2" aria-labelledby="posters-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="posters-h" data-text="posters-title" data-text-name="포스터 제목">코트 브랜드 포스터 2장</h2><p data-text="posters-desc" data-text-name="포스터 설명">“From the Field, To You”와 “Time, Stitched by Hand”. 포스터마다 글씨와 사진 한 장을 골라 만들고 거리 벽에 붙여 봤어요.</p></div>
+      <div class="grid fill">
+        <a class="tile tile--poster span-4" href="images/works/poster-field.jpg" data-gallery="images/works/poster-field.jpg|images/works/poster-mockup-gallery.jpg" data-title="From the Field, To You" data-key="poster-field" aria-label="Open the poster From the Field, To You"><div class="tile__media"><img data-slot="poster-field" src="images/works/poster-field.jpg" alt="Poster: From the Field, To You" loading="lazy" data-source="client" data-subject="poster"></div></a>
+        <a class="tile tile--poster span-4" href="images/works/poster-stitched.jpg" data-gallery="images/works/poster-stitched.jpg|images/works/poster-mockup-street.jpg" data-title="Time, Stitched by Hand" data-key="poster-stitched" aria-label="Open the poster Time, Stitched by Hand"><div class="tile__media"><img data-slot="poster-stitched" src="images/works/poster-stitched.jpg" alt="Poster: Time, Stitched by Hand" loading="lazy" data-source="client" data-subject="poster"></div></a>
+        <a class="tile tile--street span-4" href="images/works/poster-mockup-street.jpg" data-gallery="images/works/poster-mockup-street.jpg|images/works/poster-mockup-gallery.jpg" data-title="거리 포스터 목업" data-key="poster-street" aria-label="Open the posters on a street wall"><div class="tile__media"><img data-slot="poster-street" src="images/works/poster-mockup-street.jpg" alt="Both posters on a stone wall in a street at dusk" loading="lazy" style="object-position: 50% 40%" data-source="client" data-subject="poster mockup"></div></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--photo">
+      <div class="section-head--split">
+        <div><h2 id="close-h" data-text="close-title" data-text-name="맨 아래 연락 제목">다음 작업, 메일로 이야기해요</h2><p class="t-lead">이틀 안에 답장드려요.</p></div>
+        <a class="btn btn--primary" href="mailto:hello@eunjookang.example">Email me<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+      <div class="close__media"><img data-slot="close-photo" src="images/works/poster-mockup-gallery.jpg" alt="Two posters framed on a gallery wall" loading="lazy" style="--pos: 50% 45%" data-source="client" data-subject="poster mockup"></div>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark" data-mark="dots" aria-hidden="true"></span>Eunjoo Kang</a>
+          <p class="footer__lede">상세페이지, 앱, 포스터, 영상.</p>
+        </div>
+        <div class="span-2 footer__col"><h4>Services</h4><ul><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li></ul></div>
+        <div class="span-2 footer__col"><h4>Work</h4><ul><li><a href="#work">Detail pages</a></li><li><a href="#apps">Apps</a></li></ul></div>
+        <div class="span-2 footer__col"><h4>Video</h4><ul><li><a href="#films">Video</a></li><li><a href="#posters">Posters</a></li></ul></div>
+        <div class="span-2 footer__col"><h4>Contact</h4><ul><li><a href="mailto:hello@eunjookang.example">Email</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>Copyright &copy; 2026 Eunjoo Kang. All rights reserved.</span>
+        <div class="socials"></div>
+        <span class="footer__note">A personal portfolio, not for commercial use. All brands are fictional; some images were made with AI.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script src="hero-type.js" defer></script>
+<script src="apps.js" defer></script>
+<script src="site.js" defer></script>
+
+</body></html>
